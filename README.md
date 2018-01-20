@@ -2,7 +2,7 @@
 
 Projeto de exemplo com integração entre o spring boot e o JSF.
 
-##Comandos:
+## Comandos:
 
 Start da aplicação:
 
