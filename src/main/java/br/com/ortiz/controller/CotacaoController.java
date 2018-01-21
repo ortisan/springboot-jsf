@@ -40,16 +40,15 @@ public class CotacaoController {
     public LineChartModel getGraficoCotacoes() {
         LineChartModel lineChartModel = new LineChartModel();
 
-        LineChartSeries pert4 = new LineChartSeries();
-        pert4.setLabel("pert4");
+        LineChartSeries petr4 = new LineChartSeries();
+        petr4.setLabel("petr4");
         cotacoes.forEach((CotacaoDiaria cotacao) -> {
             String data = new SimpleDateFormat("dd/MM/yyyy").format(cotacao.getData());
             BigDecimal valor = cotacao.getValor();
-            pert4.set(data, valor);
+            petr4.set(data, valor);
         });
 
-
-        lineChartModel.addSeries(pert4);
+        lineChartModel.addSeries(petr4);
 
         lineChartModel.setTitle("Cotações");
         lineChartModel.setLegendPosition("e");
@@ -59,8 +58,8 @@ public class CotacaoController {
         lineChartModel.getAxes().put(AxisType.X, xAxis);
         Axis yAxis = lineChartModel.getAxis(AxisType.Y);
         yAxis.setLabel("Preço");
-        yAxis.setMin(90);
-        yAxis.setMax(150);
+        yAxis.setMin(95);
+        yAxis.setMax(105);
 
         return lineChartModel;
     }
